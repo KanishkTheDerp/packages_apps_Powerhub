@@ -45,6 +45,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.power.hub.preferences.SystemSettingSwitchPreference;
+import com.power.hub.utils.Utils;
 
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
 public class MiscSettings extends SettingsPreferenceFragment implements
@@ -105,7 +106,7 @@ public class MiscSettings extends SettingsPreferenceFragment implements
 
         mFODScreenOff = (SystemSettingSwitchPreference) findPreference(SCREEN_OFF_FOD_KEY);
         mUdfpsHapticFeedback = (SystemSettingSwitchPreference) findPreference(UDFPS_HAPTIC_FEEDBACK);
-        if (!UdfpsUtils.hasUdfpsSupport(getContext())) {
+        if (!Utils.hasUDFPS(getActivity())) {
             prefSet.removePreference(mFODScreenOff);
             prefSet.removePreference(mUdfpsHapticFeedback);
         }
