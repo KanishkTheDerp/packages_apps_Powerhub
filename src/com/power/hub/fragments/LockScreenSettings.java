@@ -42,6 +42,7 @@ import android.provider.Settings;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.util.voltage.VoltageUtils;
+import com.android.internal.util.voltage.udfps.CustomUdfpsUtils;
 import com.power.hub.preferences.SystemSettingListPreference;
 import com.power.hub.preferences.CustomSeekBarPreference;
 import com.power.hub.preferences.SecureSettingListPreference;
@@ -60,9 +61,11 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String KEY_WEATHER = "lockscreen_weather_enabled";
+    private static final String UDFPS_CATEGORY = "udfps_category";
 
     private Preference mWeather;
     private OmniJawsClient mWeatherClient;
+    private PreferenceCategory mUdfpsCategory;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -82,10 +85,13 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         } catch (NameNotFoundException e) {
             e.printStackTrace();
         }
-
        mWeather = (Preference) findPreference(KEY_WEATHER);
        mWeatherClient = new OmniJawsClient(getContext());
        updateWeatherSettings();
+        mUdfpsCategory = findPreference(UDFPS_CATEGORY);
+        if (!CustomUdfpsUtils.hasUdfpsSupport(getContext())) {
+            prefScreen.removePreference(mUdfpsCategory);
+        }
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
