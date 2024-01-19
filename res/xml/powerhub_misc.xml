@@ -43,4 +43,11 @@
         android:summary="@string/click_partial_screenshot_summary"
         android:defaultValue="false" />
 
+    <!-- Volume steps -->
+    <Preference
+        android:key="volume_steps"
+        android:title="@string/volume_steps_title"
+        android:summary="@string/volume_steps_summary"
+        android:fragment="com.power.hub.fragments.VolumeSteps" />
+
 </PreferenceScreen>
