@@ -35,6 +35,10 @@ import android.widget.TextView;
 import com.android.settings.R;
 import com.android.settings.Utils;
 
+import androidx.core.content.res.TypedArrayUtils;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceViewHolder;
+
 public class powerhubPreference extends Preference {
 
     private final View.OnClickListener mClickListener = v -> performClick(v);
@@ -45,12 +49,12 @@ public class powerhubPreference extends Preference {
     public powerhubPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.Preference);
+        TypedArray a = context.obtainStyledAttributes(attrs, androidx.preference.R.styleable.Preference);
 
-        mAllowDividerAbove = TypedArrayUtils.getBoolean(a, R.styleable.Preference_allowDividerAbove,
-                R.styleable.Preference_allowDividerAbove, false);
-        mAllowDividerBelow = TypedArrayUtils.getBoolean(a, R.styleable.Preference_allowDividerBelow,
-                R.styleable.Preference_allowDividerBelow, false);
+        mAllowDividerAbove = TypedArrayUtils.getBoolean(a, androidx.preference.R.styleable.Preference_allowDividerAbove,
+                androidx.preference.R.styleable.Preference_allowDividerAbove, false);
+        mAllowDividerBelow = TypedArrayUtils.getBoolean(a, androidx.preference.R.styleable.Preference_allowDividerBelow,
+                androidx.preference.R.styleable.Preference_allowDividerBelow, false);
         a.recycle();
 
         setLayoutResource(R.layout.preference_powerhub_seekbar);
