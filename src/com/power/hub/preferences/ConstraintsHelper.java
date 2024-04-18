@@ -45,7 +45,7 @@ import java.util.Objects;
 import java.util.Set;
 
 import com.android.internal.custom.hardware.LineageHardwareManager;
-import com.power.hub.R;
+import com.android.settings.R;
 
 
 /**
