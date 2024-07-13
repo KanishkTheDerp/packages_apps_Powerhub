@@ -48,11 +48,10 @@
 	<PreferenceCategory
         android:title="@string/qs_footer_category">
 
-        <com.power.hub.preferences.SecureSettingSwitchPreference
+        <com.power.hub.preferences.SystemSettingSwitchPreference
             android:key="qs_show_data_usage"
             android:title="@string/qs_footer_datausage_title"
-            android:summary="@string/qs_footer_datausage_summary"
-            android:defaultValue="true" />
+            android:summary="@string/qs_footer_datausage_summary" />
 
     </PreferenceCategory>
 
