@@ -45,10 +45,13 @@ import android.view.DisplayCutout;
 import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
 import android.view.Surface;
+import java.util.Arrays;
 
 import java.util.List;
 
 public class DeviceUtils {
+
+    private static final String DEVICE = "ro.voltage.device";
 
     /* returns whether the device has a centered display cutout or not. */
     public static boolean hasCenteredCutout(Context context) {
@@ -205,5 +208,24 @@ public class DeviceUtils {
         final List<FingerprintSensorPropertiesInternal> props =
                 fingerprintManager.getSensorPropertiesInternal();
         return props != null && props.size() == 1 && props.get(0).isAnyUdfpsType();
+    }
+    private static final String[] currentlySupportedPixels = {
+            "akita",
+            "husky",
+            "shiba",
+            "felix",
+            "tangorpro",
+            "lynx",
+            "cheetah",
+            "panther",
+            "bluejay",
+            "oriole",
+            "raven",
+            "barbet"
+    };
+
+    public static boolean isCurrentlySupportedPixel() {
+        String deviceCodename = SystemProperties.get(DEVICE);
+        return Arrays.asList(currentlySupportedPixels).contains(deviceCodename);
     }
 }
