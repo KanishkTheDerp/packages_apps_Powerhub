@@ -310,8 +310,8 @@
     <string name="click_partial_screenshot_summary">Short click Volume Down and Power to take partial screenshot</string>
 
     <!-- Island Notification -->
-    <string name="island_notification_title">Island notification</string>
-    <string name="island_notification_summary">Display heads-up notification in Dynamic Island style</string>
+    <string name="notifications_island_notification_title">Island notification</string>
+    <string name="notifications_island_notification_summary">Display heads-up notification in Dynamic Island style</string>
     <string name="island_notification_now_playing_title">Island Now Playing</string>
     <string name="island_notification_now_playing_summary">Display currently playing song as Dynamic Island notification</string>
     <string name="island_notification_footer_text">

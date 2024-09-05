@@ -41,8 +41,8 @@
 
         <Preference
             android:key="island_notification"
-            android:title="@string/island_notification_title"
-            android:summary="@string/island_notification_summary"
+            android:title="@string/notifications_island_notification_title"
+            android:summary="@string/notifications_island_notification_summary"
             android:fragment="com.power.hub.fragments.IslandSettings" />
 
         <com.power.hub.preferences.SystemSettingSwitchPreference
